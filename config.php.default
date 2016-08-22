@@ -1,0 +1,13 @@
+<?php
+    
+    class Config {
+        
+        public static function get() {
+            $config = [
+                'dbCon' => "mongodb://username:password@localhost:27017/admin"
+            ];
+            return $config;
+        }
+    }
+    
+?>

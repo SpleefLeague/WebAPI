@@ -64,7 +64,7 @@
         
         public function getMongo() {
             if ($this->mongoConnection == null) {
-                $this->mongoConnection = new MongoDB\Driver\Manager($CONFIGURATION['dbCon']);
+                $this->mongoConnection = new MongoDB\Driver\Manager(Config::get()['dbCon']);
             }
             return $this->mongoConnection;
         }
