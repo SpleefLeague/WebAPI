@@ -15,6 +15,9 @@
                     $data = fread($staffFile, filesize($this->staffFileName));
                     $obj = json_decode($data);
                     $obj->age = time() - filemtime($this->staffFileName);
+                    if ($obj->age < -1) {
+                        $obj->age = -1;
+                    }
                     $data = json_encode($obj, JSON_PRETTY_PRINT);
                     echo $data;
                     return true;

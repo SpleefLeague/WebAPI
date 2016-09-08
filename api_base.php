@@ -2,7 +2,7 @@
 
     header('Content-Type: application/json');
 
-    include './config.php';
+    require_once('./config.php');
     
     class Player {
         public $username;
@@ -31,6 +31,20 @@
         }
     }
 
+    class GamePlayer extends Player {
+        public $rating;
+        public function __construct($username, $uuid, $rating, $rank = "DEFAULT") {
+            parent::__construct($username, $uuid, $rank);
+            $this->rating = $rating;
+        }
+        
+        public static function constructPlayer($data) {
+            $rank = property_exists($data, 'rank') ? $data->rank : "DEFAULT";
+            $p = new GamePlayer($data->username, $data->uuid, $data->rating, $rank);
+            return $p;
+        }
+    }
+
     abstract class APIClass {
         
         private $database = array(
@@ -42,7 +56,8 @@
         private $collection = array(
             'PLAYERS' => 'Players',
             'ARENAS' => 'Arenas',
-            'SETTINGS' => 'Settings'
+            'SETTINGS' => 'Settings',
+			'RANKS' => 'Ranks'
         );
         
         private $playerProjection = array('projection' => array(
@@ -50,7 +65,8 @@
                 'username' => true,
                 'rank' => true,
                 'uuid' => true,
-                'hiddenStaff' => true
+                'hiddenStaff' => true,
+                'rating' => true
             )
         );
         
@@ -89,6 +105,54 @@
                 return Player::constructPlayer($res[0]);
             }
             return null;
+        }
+        
+        public function getGamePlayerById($game, $uuid) {
+            $query = new MongoDB\Driver\Query(['uuid' => $uuid], $this->playerProjection);
+            $res = $this->getMongo()->executeQuery($game.'.Players', $query)->toArray();
+            if (count($res) > 0) {
+                return GamePlayer::constructPlayer($res[0]);
+            }
+            return null;
+        }
+        
+        public function getGamePlayerByName($game, $username) {
+            $query = new MongoDB\Driver\Query(['lookupUsername' => strtolower($username)], $this->playerProjection);
+            $res = $this->getMongo()->executeQuery($game.'.Players', $query)->toArray();
+            if (count($res) > 0) {
+                return GamePlayer::constructPlayer($res[0]);
+            }
+            return null;
+        }
+        
+        public function isValidGameName($game) {
+            switch (strtolower($game)) {
+                case "spleef":
+                case "snowspleef":
+                case "ss":
+                case "superspleef":
+                case "jump":
+                case "superjump":
+                case "sj":
+                    return true;
+                default: 
+                    return false;
+            }
+        }
+        
+        public function fixGameName($game) {
+            switch (strtolower($game)) {
+                case "spleef":
+                case "snowspleef":
+                case "ss":
+                case "superspleef":
+                    return "SuperSpleef";
+                case "jump":
+                case "superjump":
+                case "sj":
+                    return "SuperJump";
+                default: return null;
+            }
         }
         
         public function disguiseRank($rank) {

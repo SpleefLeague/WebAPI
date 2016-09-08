@@ -1,4 +1,10 @@
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)/(.*)/(.*)/(.*)?$ $1.php?path=$2/$3/$4 [L]
+RewriteRule ^(.*)/(.*)/(.*)?$ $1.php?path=$2/$3 [L]
+RewriteRule ^(.*)/(.*)?$ $1.php?path=$2 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php

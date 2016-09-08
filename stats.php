@@ -67,9 +67,10 @@
         }
         
         public function run() {
-            if (!isset($_GET['p']) && !isset($_GET['u'])) {
+            if (!isset($_GET['path'])) {
                 $this->dieError("no argument specified");
             }
+			
             $options = [
                 'projection' => [
                     'username' => true,
@@ -82,11 +83,15 @@
             ];
             
             $player = null;
-            
-            if (isset($_GET['u'])) {
-                $player = $this->getPlayerById($_GET['u']);
-            } else if (isset($_GET['p'])) {
-                $player = $this->getPlayerByName($_GET['p']);
+			
+			$requestUrl = explode('/', $_GET['path']);
+            if (count($requestUrl) < 2) {
+                $this->dieError('incomplete arguments');   
+            }
+            if (strtolower($requestUrl[0]) == 'uuid') {
+                $player = $this->getPlayerById(strtolower($requestUrl[1]));
+            } else if (strtolower($requestUrl[0]) == 'name') {
+                $player = $this->getPlayerByName($requestUrl[1]);
             }
             if ($player == null) {
                 $this->dieError('player not found');
