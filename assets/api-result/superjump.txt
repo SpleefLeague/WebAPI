@@ -1,0 +1,39 @@
+{
+    "page": 3,
+    "age": 0,
+    "players": [
+        {
+            "username": "CubeWorldServer",
+            "uuid": "9eb331fb-2b7d-4cb7-87fc-03805e3323eb",
+            "rating": 1541,
+            "rank": 201
+        },
+        {
+            "username": "Awibo",
+            "uuid": "29cd160b-a4c8-4d4e-a3f5-b4c635261040",
+            "rating": 1537,
+            "rank": 202
+        },
+        {
+            "username": "Senty28",
+            "uuid": "a75a035c-e003-4366-921d-25ffe67b729c",
+            "rating": 1537,
+            "rank": 203
+        },
+        {
+            "username": "GalaxyPuffz",
+            "uuid": "1c7be818-c555-43c7-8c6a-d11fbefb1882",
+            "rating": 1536,
+            "rank": 204
+        },
+        {
+            "username": "Coolemous",
+            "uuid": "6edc9d72-39d6-47e9-b735-1f1865a010cc",
+            "rating": 1534,
+            "rank": 205
+        },
+        {
+            "...": "..."
+        }
+    ]
+}

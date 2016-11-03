@@ -1,0 +1,35 @@
+{
+    "age": 29,
+    "source": "cache",
+    "ranks": [
+        {
+            "rank": "ADMIN",
+            "username": "Jecth",
+            "uuid": "da288ffb-edfc-4e4a-bbd2-80a14aff912f"
+        },
+        {
+            "rank": "COUNCIL",
+            "username": "Vatonage",
+            "uuid": "0514e858-e3de-40f5-b3e0-ddbf0a1c9f78"
+        },
+        {
+            "rank": "COUNCIL",
+            "username": "Worme",
+            "uuid": "9f656468-c399-41fb-850b-1ede702f40a3"
+        },
+        {
+            "rank": "ADMIN",
+            "username": "Blaezon",
+            "uuid": "73c72cc3-64dc-4a6f-b5cb-9f6be0f31ca5"
+        },
+        {
+            "rank": "ADMIN",
+            "username": "Sinsie",
+            "uuid": "d2922935-ced0-4fe8-8641-eabe7ea69c9b"
+        },
+        {
+            "...": "..."
+        }
+    ],
+    "length": 20
+}

@@ -1,0 +1,40 @@
+{
+    "players": [
+        {
+            "...": "..."
+        },
+        {
+            "username": "CoolPerson125",
+            "uuid": "78caaecd-a324-4782-abcb-afa0af69bcf8",
+            "rating": 1406,
+            "rank": 686
+        },
+        {
+            "username": "SheriffSoco",
+            "uuid": "6e347123-c684-4d7e-996c-44d4924ff172",
+            "rating": 1406,
+            "rank": 687
+        },
+        {
+            "username": "Wouto1997",
+            "uuid": "a44c33ce-480e-486f-9f78-2d1f52db037b",
+            "rating": 1405,
+            "rank": 688
+        },
+        {
+            "username": "El_Slimo",
+            "uuid": "924b769a-0809-4711-bef0-db12291add31",
+            "rating": 1405,
+            "rank": 689
+        },
+        {
+            "username": "superepicbubble",
+            "uuid": "395c8cbf-b0fb-418b-b5df-b1cc5c623d4b",
+            "rating": 1405,
+            "rank": 690
+        },
+        {
+            "...": "..."
+        }
+    ]
+}

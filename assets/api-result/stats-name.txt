@@ -1,0 +1,59 @@
+{
+    "uuid": "cc03d72c-4c9c-4d1d-bc44-11241a0ccb4e",
+    "username": "Tobyyy",
+    "rank": "SENIOR_MODERATOR",
+    "superspleef": {
+        "rating": 1476,
+        "rank": 562,
+        "visitedArenas": [
+            "Arena",
+            "Sewers",
+            "Cruiseship",
+            "Halloween",
+            "Eco",
+            "Zeppelin",
+            "Steps",
+            "PirateBay",
+            "Practice",
+            "Minispleef",
+            "Quarry",
+            "Desert",
+            "Mountain",
+            "Oasis",
+            "Clocktower",
+            "Temple",
+            "Aqua",
+            "LostCity",
+            "Carnival",
+            "Simple"
+        ],
+        "missingArenas": [
+            "Volcano",
+            "Burrow",
+            "Spire",
+            "CSC"
+        ]
+    },
+    "superjump": {
+        "rating": 1589,
+        "rank": 171,
+        "visitedArenas": [
+            "Halloween",
+            "Carnival",
+            "Clocktower",
+            "Arena",
+            "LostCity",
+            "Desert",
+            "Inferno",
+            "Void",
+            "Laboratory",
+            "Heist"
+        ],
+        "missingArenas": [
+
+        ]
+    },
+    "swc": {
+        "rating": 1000
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "age": 117,
+    "source": "cache",
+    "ranks": [
+        {
+            "name": "ADMIN",
+            "displayName": "Admin",
+            "ladder": 100,
+            "op": true,
+            "color": "DARK_RED"
+        },
+        {
+            "name": "COUNCIL",
+            "displayName": "Council",
+            "ladder": 100,
+            "op": true,
+            "color": "DARK_RED"
+        },
+        {
+            "name": "DEVELOPER",
+            "displayName": "Dev",
+            "ladder": 100,
+            "op": true,
+            "color": "BLUE"
+        },
+        {
+            "name": "SENIOR_MODERATOR_BUILDER",
+            "displayName": "Sr. Mod",
+            "ladder": 86,
+            "op": true,
+            "color": "RED"
+        },
+        {
+            "name": "SENIOR_MODERATOR",
+            "displayName": "Sr. Mod",
+            "ladder": 85,
+            "op": false,
+            "color": "RED"
+        },
+        {
+            "...": "..."
+        }
+    ],
+    "length": 16
+}
