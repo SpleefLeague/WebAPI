@@ -13,19 +13,23 @@
         }
         
         public function getDefaultArenas($game) {
-            $q = '';
-            if ($game == 'SPLEEF') {
-                $q = 'default_arenas_spleef';
-            } else if ($game == 'SUPERJUMP') {
-                $q = 'default_arenas_jump';
-            } else {
-                return [];
-            }
-            $filter = [ 'key' => $q ];
-            $options = [];
+            $filter = [ 'paused' => false ];
+            $options = [
+                'projection' => [
+                    'name' => true,
+                    'isDefault' => true,
+                    '_id' => false
+                ]
+            ];
             $query = new MongoDB\Driver\Query($filter, $options);
-            $cursor = $this->getMongo()->executeQuery($this->getCollection('MAIN', 'SETTINGS'), $query)->toArray();
-            return $cursor[0]->value;
+            $cursor = $this->getMongo()->executeQuery($this->getCollection($game, 'ARENAS'), $query)->toArray();
+            $names = [];
+            foreach ($cursor as $a) {
+                if($a->isDefault == true) {
+                    array_push($names, $a->name);
+                }
+            }
+            return $names;
         }
         
         public function getMissingArenas($game, $player) {
